@@ -122,6 +122,11 @@ function createRock(x) {
  * Finally, alert "YOU LOSE!" to the player.
  */
 function endGame() {
+
+  while(ROCKS.length > 0){
+    GAME.removeChild(ROCKS[0]);
+    ROCKS.shift();
+  }
    clearInterval(gameInterval);
    ROCKS.forEach(function(rock) {rock.remove()});
    document.removeEventListener('keydown', moveDodger);
